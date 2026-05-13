@@ -1,8 +1,8 @@
 class Glass < Formula
   desc "Minimal markdown note editor"
   homepage "https://github.com/pacificcodeinc/glass"
-  url "https://github.com/pacificcodeinc/glass/archive/refs/tags/v0.1.0.tar.gz"
-  sha256 "5534dc48785eeab0e7d4646a7c1913ef7d6ed15fb472851ea139135e1438dc65"
+  url "https://github.com/pacificcodeinc/glass/archive/refs/tags/v0.1.1.tar.gz"
+  sha256 "561421971b74653fbda62f9413984216c2680cee954be670d907ba506c5f49b4"
   license "MIT"
 
   depends_on "rust" => :build
@@ -12,6 +12,6 @@ class Glass < Formula
   end
 
   test do
-    system "#{bin}/glass", "--version"
+    assert_match "glass #{version}", shell_output("#{bin}/glass --version")
   end
 end
